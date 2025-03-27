@@ -72,6 +72,13 @@ app.get("/callback", async (req, res) => {
     }
 });
 
+app.get('/'),async function (req, res) {
+    return res.status(200).json({
+        'health': true,
+        'status': 'success',
+    });
+}
+
 setInterval(refreshAccessToken, 50 * 60 * 1000);
 
 
